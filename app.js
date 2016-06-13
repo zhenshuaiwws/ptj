@@ -16,12 +16,10 @@ app.set('view engine', 'html');
 app.engine('html', ejs.__express);
 app.set('layout', 'layout.html');
 app.use(expressLayouts);
+//app.use(cookieParser);
+//app.use(bodyParser);
 
-app.get('/', function (req, res) {
-    res.render('index', {
-        title : 'Part-time Job'
-    });
-});
+router(app);
 
 app.listen('5000', '0.0.0.0', function () {
     console.log('server online! port:5000');
