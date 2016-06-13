@@ -1,12 +1,4 @@
-var data = require('./data/index.js');
-
 exports = module.exports = function (app) {
-    app.get('/', function (req, res) {
-        res.render('index', {
-            title: 'Part-time Job'
-        });
-    });
-
     app.get('/api/users', function (req, res) {
         res.send({
             code: 200,
@@ -17,4 +9,7 @@ exports = module.exports = function (app) {
             ]
         });
     });
+    app.put('/api/users', function (req, res) {
+
+    })
 };
