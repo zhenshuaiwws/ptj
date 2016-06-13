@@ -10,8 +10,8 @@ var express = require('express'),
 
 
 // view engine setup
-app.use(express.static(path.join(__dirname, '/www/page'), {maxAge: 1000 * 60 * 60 * 24 * 7}));
-app.set('views', path.join(__dirname, '/www/layout'));
+app.use(express.static(path.join(__dirname, '/www/static'), {maxAge: 1000 * 60 * 60 * 24 * 7}));
+app.set('views', path.join(__dirname, '/www/view'));
 app.set('view engine', 'html');
 app.engine('html', ejs.__express);
 app.set('layout', 'layout.html');
