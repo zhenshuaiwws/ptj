@@ -40,6 +40,4 @@ jspm_packages
 
 .idea
 .gitignore
-www/page/
-bower.json
 www/static/bower_components/
