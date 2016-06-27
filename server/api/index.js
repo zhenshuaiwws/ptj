@@ -1,5 +1,7 @@
 var userAPI = require('./user');
 
-exports = module.exports = {
+module.exports = {
     user: new userAPI()
 };
+
+exports = module.exports;
