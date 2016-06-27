@@ -5,7 +5,7 @@ var express = require('express'),
     path = require('path'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    router = require('./server/router.js'),
+    router = require('./server/router'),
     app = express();
 
 

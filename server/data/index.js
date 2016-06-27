@@ -6,18 +6,8 @@ db.once('open', function () {
     //一次打开记录
 });
 
-var PersonSchema = new mongoose.Schema({
-    _id:String,
-    name: String,
-    age:Number
-});
-var PersonModel = db.model('Person', PersonSchema);
-var personEntity = new PersonModel({name: 'Krouky'});
-console.log(personEntity);
+var userModels = require('./model/user');
 
-personEntity.save();
-
-
-exports = module.exports = function () {
-
+exports = module.exports = {
+    userModels: userModels
 };

@@ -24,6 +24,7 @@
     "gulp-less": "^3.1.0",
     "gulp-uglify": "^1.5.3",
     "mongoose": "^4.4.20",
+    "nodemon": "^1.9.2",
     "path": "^0.12.7"
   }
 }
