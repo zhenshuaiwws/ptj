@@ -1,16 +1,29 @@
 var models = require("./model");
 
-var user = function () {
+function User() {
+    this.model = models.user;
 
-    user.prototype.getAll = function () {
-        console.log('---data');
-        console.log(models.user.find)
+}
+User.prototype.getAll = function () {
+    console.log('---data');
 
-        // models.user.find({}, function (err, users) {
-        //     console.log(21);
-        //     console.log(users);
-        // });
-    };
+    models.user.findOne({desc: ''}, function (err, users) {
+        console.log(21);
+        console.log(users);
+    });
+};
+User.prototype.addUser = function (name, desc) {
+    var _user = this.model({
+        name: name,
+        desc: desc
+    });
+    _user.save(function (err) {
+        if (err) {
+            console.log('保存失败')
+        } else {
+            console.log('保存成功: ' + name)
+        }
+    });
 };
 
-exports = module.exports = user;
+exports = module.exports = User;

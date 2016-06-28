@@ -16,8 +16,10 @@ app.set('view engine', 'html');
 app.engine('html', ejs.__express);
 app.set('layout', 'layout.html');
 app.use(expressLayouts);
-//app.use(cookieParser);
-//app.use(bodyParser);
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
 
 router(app);
 

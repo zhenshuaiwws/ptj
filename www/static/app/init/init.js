@@ -16,16 +16,17 @@
     angular.module("ptj.init", [])
         .controller("appHome", ['$scope','ptjData',function ($scope, ptjData) {
             var vm = $scope.vm = {
+                membersData: [],
                 newMember:{}
             };
-            
-            ptjData.user.getAll().success(function (res) {
-                vm.membersData = res.data;
-            });
+
+            // ptjData.user.getAll().success(function (res) {
+            //     vm.membersData = res.data;
+            // });
 
             vm.addMember=function () {
-                ptjData.user.add(vm.membersData).success(function (res) {
-                    vm.membersData.push(vm.membersData);
+                ptjData.user.add(vm.newMember).success(function (res) {
+                    vm.membersData.push(vm.newMember);
                 });
             };
 

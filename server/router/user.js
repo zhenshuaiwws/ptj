@@ -4,4 +4,6 @@ exports = module.exports = function (app, api) {
         console.log('---路由');
         return next()
     }, api.user.getAll);
+
+    app.post('/api/user', api.user.addUser);
 };

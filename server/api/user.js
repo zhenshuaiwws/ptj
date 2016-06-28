@@ -1,4 +1,3 @@
-var server = require('../domain');
 var data = require('../data');
 
 var UserAPI = function () {
@@ -8,5 +7,14 @@ var UserAPI = function () {
 
         });
     };
+    UserAPI.prototype.addUser = function (req, res, next) {
+        data.userData.addUser(req.body.name, req.body.desc, function (user) {
+            res.send({
+                code: 200
+            });
+        });
+    };
+
+
 };
 exports = module.exports = UserAPI;
