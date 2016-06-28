@@ -1,11 +1,11 @@
 var data = require("../data");
-function UserService() {
 
+function User() {
+    User.prototype.getAll = function () {
+        console.log('---server');
+        console.log(data.userData)
+        data.userData.getAll();
+    };
 }
-UserService.prototype.getAll = function () {
-    console.log('server')
-    data.userModels.getAll()
-};
-exports = module.exports = {
-    UserService: UserService
-};
+
+exports = module.exports = new User();

@@ -22,8 +22,7 @@ app.use(expressLayouts);
 router(app);
 
 app.listen('5000', '0.0.0.0', function () {
-    console.log('server online! port:5000');
-
+    console.log('server online! port:5000  ---  ' + (new Date).toGMTString());
 });
 
 module.exports = exports = app;

@@ -6,8 +6,8 @@ db.once('open', function () {
     //一次打开记录
 });
 
-var userModels = require('./model/user');
+var userData = require('./user');
 
 exports = module.exports = {
-    userModels: userModels
+    userData: new userData()
 };
