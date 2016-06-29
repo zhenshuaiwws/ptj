@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 router(app);
 
 app.listen('5000', '0.0.0.0', function () {
+    console.log('------------------------------------------------------')
     console.log('server online! port:5000  ---  ' + (new Date).toGMTString());
 });
 

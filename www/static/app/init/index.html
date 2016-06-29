@@ -14,7 +14,8 @@
     </div>
     <table class="table table-striped">
         <tr ng-repeat="member in vm.membersData">
-            <td>{{member}}</td>
+            <td>{{member._id}}</td>
+            <td>{{member.name}}</td>
             <td>
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 <i class="fa fa-times" aria-hidden="true"></i>
