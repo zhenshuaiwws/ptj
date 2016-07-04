@@ -2,18 +2,18 @@
     angular.module('ptj.data', [])
         .factory('ptjData', ['$http', function ($http) {
             return {
-                user:{
+                user: {
                     getAll: function () {
                         return $http.get('/api/users');
                     },
-                    add:function (member) {
+                    add   : function (member) {
                         return $http.post('/api/user', member);
                     },
-                    update:function (uid) {
-                        return $http.put('/api/user', {uid:uid});
+                    update: function (id) {
+                        return $http.put('/api/user', {id: id});
                     },
-                    remove:function (uid) {
-                        return $http.delete('/api/user', {uid:uid});
+                    del   : function (id) {
+                        return $http.delete('/api/user/' + id);
                     }
                 }
             };

@@ -1,7 +1,7 @@
 var models = require("./model");
 
 function User() {
-    var model = models.user.userSchema;
+    var model = models.user;
 
     User.prototype.getAll = function (callback) {
         model.find({}, function (err, users) {
@@ -14,14 +14,14 @@ function User() {
             desc: desc
         });
         _user.save(function (err, user) {
-            if (err) {
-                console.log('保存失败')
-            } else {
-                callback(err, user);
-                console.log('保存成功: ' + name)
-            }
+            callback(err, user);
         });
     };
+    User.prototype.delUser = function (id, callback) {
+        model.remove({_id: id}, function (err) {
+            callback(err);
+        });
+    }
 }
 
 exports = module.exports = User;

@@ -30,6 +30,12 @@
                 });
             };
 
+            vm.delMember = function (member) {
+                ptjData.user.del(member._id).success(function (res) {
+                    _.remove(vm.membersData, {_id: member._id});
+                })
+            }
+
 
         }]);
 })();

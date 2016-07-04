@@ -5,4 +5,6 @@ exports = module.exports = function (app, api) {
     }, api.user.getAll);
 
     app.post('/api/user', api.user.addUser);
+
+    app.delete('/api/user/:id', api.user.delUser)
 };
